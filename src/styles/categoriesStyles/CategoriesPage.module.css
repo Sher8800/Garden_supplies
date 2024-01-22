@@ -1,0 +1,23 @@
+.categoriesPage_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding: 40px 40px 80px 40px;
+}
+
+.title {
+  color: var(--txt-black, #282828);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.img {
+  width: 248px;
+  height: 350px;
+}

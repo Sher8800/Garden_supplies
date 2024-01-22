@@ -1,0 +1,26 @@
+.baner_container {
+  background-image: url('../../images/PromoBaner.png');
+  height: 600px;
+  fill: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), lightgray 0px -230.586px / 100% 160.195% no-repeat;
+  padding: 80px 40px;
+}
+
+.baner_txt {
+  color: var(--txt-white, #FFF);
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.baner_btn {
+  border-radius: var(--radius-small, 6px);
+  background: var(--green, #393);
+  padding: 16px 56px;
+  color: var(--txt-white, #FFF);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 130%;
+  border: none;
+  cursor: pointer;
+}
