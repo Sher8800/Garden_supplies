@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/footerStyles/FooterPage.module.css'
+import styles from '../../styles/FooterPage.module.css'
 
 function Map() {
   return (

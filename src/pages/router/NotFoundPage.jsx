@@ -1,7 +1,8 @@
 import React from 'react'
-import styles from '../../styles/notFoundStyles/NotFoundPage.module.css'
+import styles from '../../styles/router/NotFoundPage.module.css'
 import cactus from '../../images/cactus.png'
 import four from '../../images/four.png'
+import { NavLink } from 'react-router-dom'
 
 function NotFoundPage() {
   return (
@@ -21,7 +22,9 @@ function NotFoundPage() {
           </p>
         </div>
 
-        <button className={styles.btn}>Go Home</button>
+        <NavLink to={''}>
+          <button className={styles.btn}>Go Home</button>
+        </NavLink>
       </div>
     </div>
   )

@@ -1,18 +1,19 @@
-import React from 'react'
-import styles from '../../styles/homeStyles/HomePage.module.css'
+import React, { useRef } from 'react'
+import styles from '../../styles/router/HomePage.module.css'
 import PromoBanner from '../../components/homeComponents/PromoBaner'
 import Discount from '../../components/homeComponents/Discount'
-import Sale from '../../components/homeComponents/Sale'
+import HomeSale from '../../components/homeComponents/HomeSale'
 import HomeCategories from '../../components/homeComponents/HomeCategories'
 
 function HomePage() {
+
   return (
     <div className={styles.home_container}>
       <PromoBanner />
       <div className={styles.home_pading}>
         <HomeCategories />
         <Discount />
-        <Sale />
+        <HomeSale />
       </div>
     </div>
   )

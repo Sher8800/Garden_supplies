@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/footerStyles/FooterPage.module.css'
+import styles from '../../styles/FooterPage.module.css'
 import instagram from '../../images/instagram.png'
 import whatsapp from '../../images/whatsapp.png'
 

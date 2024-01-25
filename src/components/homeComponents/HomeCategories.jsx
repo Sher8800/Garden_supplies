@@ -1,21 +1,25 @@
 import React from 'react'
-import styles from '../../styles/homeStyles/HomePage.module.css'
-import BlockNameBtn from './BlockNameBtn';
+import styles from '../../styles/router/HomePage.module.css'
 import img from "../../images/img.png";
-import CategoriesCard from '../categoriesComponents/CategoriesCard';
+import CategoryCard from '../../ui/productsCard/CategoryCard';
+import BlockNameBtn from '../../ui/reused/BlockNameBtn';
 
 const cotegories = [
-  { image: img, description: 'lorem, ipsum dolor' },
-  { image: img, description: 'lorem, ipsum dolor' },
-  { image: img, description: 'lorem, ipsum dolor' },
-  { image: img, description: 'lorem, ipsum dolor' },
+  { image: img, id: 1, description: 'lorem, ipsum dolor' },
+  { image: img, id: 2, description: 'lorem, ipsum dolor' },
+  { image: img, id: 3, description: 'lorem, ipsum dolor' },
+  { image: img, id: 4, description: 'lorem, ipsum dolor' },
 ]
 
 function HomeCategories() {
   return (
     <div className={styles.main_container}>
-      <BlockNameBtn pageTitle='Categories' btnTitle='All categories' />
-      <CategoriesCard
+      <BlockNameBtn
+        pageTitle='Categories'
+        btnTitle='All categories'
+        path={'CategoriesPage'}
+        classNameLine={styles.cotegoriesLine} />
+      <CategoryCard
         array={cotegories}
         classNameCategoriesContainer={styles.categories_container}
         classNameImg={styles.img_categories} />
