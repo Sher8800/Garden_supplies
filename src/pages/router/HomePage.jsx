@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styles from '../../styles/router/HomePage.module.css'
 import PromoBanner from '../../components/homeComponents/PromoBaner'
 import Discount from '../../components/homeComponents/Discount'
