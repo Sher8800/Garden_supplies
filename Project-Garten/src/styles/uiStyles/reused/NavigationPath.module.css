@@ -18,7 +18,16 @@
   border: 1px solid var(--grey-divider, #DDD);
 }
 
+.path_container:last-child {
+  display: none;
+}
+
 .line {
   width: 16px;
   border-bottom: 1px solid #DDD;
 }
+
+/* 
+.lastLine {
+  opacity: 0;
+} */

@@ -1,17 +1,17 @@
 import React from 'react'
 import styles from '../../styles/router/HomePage.module.css'
-import img from "../../images/img.png";
 import CategoryCard from '../../ui/productsCard/CategoryCard';
 import BlockNameBtn from '../../ui/reused/BlockNameBtn';
+import { useGetCategoriesAllQuery } from '../../redux/api/productApi';
 
-const cotegories = [
-  { image: img, id: 1, description: 'lorem, ipsum dolor' },
-  { image: img, id: 2, description: 'lorem, ipsum dolor' },
-  { image: img, id: 3, description: 'lorem, ipsum dolor' },
-  { image: img, id: 4, description: 'lorem, ipsum dolor' },
-]
+let cotegories = []
 
 function HomeCategories() {
+  const { data } = useGetCategoriesAllQuery()
+  if (data) {
+    cotegories = data.slice(0, 4)
+  }
+
   return (
     <div className={styles.main_container}>
       <BlockNameBtn

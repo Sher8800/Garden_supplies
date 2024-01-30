@@ -13,11 +13,14 @@
 }
 
 .categories {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .img {
   width: 248px;
   height: 350px;
+  border-radius: var(--radius-big, 12px);
+  background: lightgray 50% / cover no-repeat;
 }

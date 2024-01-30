@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 32px;
-  padding: 0 40px 80px 40px;
+  padding: 80px 40px 80px 40px;
 }
 
 .contactInfo_container {
@@ -21,7 +21,7 @@
 
 .links_container {
   display: grid;
-  grid-template-columns: 780px 548px;
+  grid-template-columns: 1.5fr 1fr;
   gap: 32px;
 }
 

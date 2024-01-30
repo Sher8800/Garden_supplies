@@ -3,14 +3,15 @@ import styles from '../styles/HeaderPage.module.css'
 import Logo from "../images/logo.png";
 import Cart from "../images/cart.png";
 import CustomLink from '../customFiles/customLink/CustomLink';
+import { NavLink } from 'react-router-dom';
 
 function HeaderPage() {
   return (
     <header className={styles.header}>
 
-      <CustomLink to="">
+      <NavLink to="">
         <img className={styles.icon_logo} src={Logo} alt='icon logo' />
-      </CustomLink>
+      </NavLink>
 
       <div className={styles.links_container}>
         <CustomLink defaultClass={styles.link} to="">Main Page</CustomLink>
