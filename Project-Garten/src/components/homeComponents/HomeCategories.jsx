@@ -4,12 +4,12 @@ import CategoryCard from '../../ui/productsCard/CategoryCard';
 import BlockNameBtn from '../../ui/reused/BlockNameBtn';
 import { useGetCategoriesAllQuery } from '../../redux/api/productApi';
 
-let cotegories = []
+let categories = []
 
 function HomeCategories() {
   const { data } = useGetCategoriesAllQuery()
   if (data) {
-    cotegories = data.slice(0, 4)
+    categories = data.slice(0, 4)
   }
 
   return (
@@ -18,9 +18,9 @@ function HomeCategories() {
         pageTitle='Categories'
         btnTitle='All categories'
         path={'CategoriesPage'}
-        classNameLine={styles.cotegoriesLine} />
+        classNameLine={styles.categoriesLine} />
       <CategoryCard
-        array={cotegories}
+        array={categories}
         classNameCategoriesContainer={styles.categories_container}
         classNameImg={styles.img_categories} />
     </div>

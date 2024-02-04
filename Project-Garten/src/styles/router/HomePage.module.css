@@ -5,11 +5,11 @@
   overflow: auto;
 }
 
-.cotegoriesLine {
+.categoriesLine {
   width: 832px;
 }
 
-.home_pading {
+.home_padding {
   display: flex;
   flex-direction: column;
   row-gap: 80px;
@@ -24,11 +24,13 @@
 
 .categories_container {
   display: flex;
-  justify-content: space-between;
+  gap: 32px;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
 }
 
 .img_categories {
-  width: 316px;
+  width:  19.75rem;
   height: 350px;
   align-self: stretch;
   border-radius: var(--radius-big, 12px);

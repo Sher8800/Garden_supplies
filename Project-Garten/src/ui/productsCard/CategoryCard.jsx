@@ -13,7 +13,7 @@ function CategoryCard({ classNameImg, classNameCategoriesContainer, array }) {
           state={{ id: category.id, title: category.title }}
           className={styles.category_container}
           key={category.id}>
-          <img className={classNameImg} src={BASE_URL + category.image} alt="image" />
+            <div className={classNameImg} style={{backgroundImage: `url(${BASE_URL + category.image})`}}></div>
           <p className={styles.description_categories}>{category.title}</p>
         </NavLink>
       )) : ''}

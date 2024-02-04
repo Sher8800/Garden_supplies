@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from '../../styles/uiStyles/productsCard/BasketCard.module.css'
-import secateurs from '../../images/secateurs.png'
-import deleteImg from '../../images/delete.png'
-import CaunterBtns from '../reused/CaunterBtns'
+import React from "react";
+import styles from "../../styles/uiStyles/productsCard/BasketCard.module.css";
+import secateurs from "../../images/secateurs.png";
+import deleteImg from "../../images/delete.png";
+import CaunterBtns from "../reused/CounterButtons";
 
 function BasketCard() {
   return (
@@ -16,10 +16,9 @@ function BasketCard() {
         </div>
 
         <CaunterBtns />
-
       </div>
     </div>
-  )
+  );
 }
 
-export default BasketCard
+export default BasketCard;

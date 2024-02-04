@@ -26,8 +26,13 @@
   text-decoration: none;
 }
 
+.link:hover{
+transform: scale(1.12);
+}
+
 .active {
-  border-bottom: 2px solid var(--green, #393);
+  transform: scale(1.12);
+  /* border-bottom: 2px solid var(--green, #393); */
   color: var(--green, #393);
   /* box-shadow: -6px 0 white, 6px 0 white, 0 7px 10px -5px var(--green, #393); */
 }

@@ -1,40 +1,50 @@
-import React from 'react'
-import styles from '../../styles/uiStyles/productsCard/ProductCard.module.css'
-import { BASE_URL } from '../../redux/api/baseUrl'
+import React from "react";
+import styles from "../../styles/uiStyles/productsCard/ProductCard.module.css";
+import { BASE_URL } from "../../redux/api/baseUrl";
+import { NavLink } from "react-router-dom";
+import CheckingDiscountPrice from "../reused/CheckingDiscountPrice";
+import PercentDiscount from "../reused/PercentDiscount";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct, cartSelector, incrementProduct } from "../../redux/slices/CartSlice";
 
 function ProductCard({ products, classNameContainer }) {
+  const dispatch = useDispatch();
+
+  const { cart: cartProducts } = useSelector(cartSelector);
+  console.log(cartProducts);
+
+  const addProductToCart = (product) => {
+    dispatch(addProduct(product));
+    // dispatch(incrementProduct(product));
+  };
+
   return (
     <div className={classNameContainer}>
-      {products ? products.map((product) => (
+      {products.map((product) => (
         <div className={styles.product_container} key={product.id}>
-          <div className={styles.img_container} >
-            <img className={styles.img_products} src={BASE_URL + product.image} alt="image" />
-            <button className={styles.btnAdd}>Add to cart</button>
-            {product.discont_price ?
-              <p className={styles.discont}>
-                {`- ${Math.ceil(100 - (product.discont_price / (product.price / 100)))} %`}
-              </p> : ''}
+          <div className={styles.img_container}>
+            <NavLink to={"/ProductPage"} state={{ id: product.id, title: product.title }}>
+              <div className={styles.img_products} style={{ backgroundImage: `url(${BASE_URL + product.image})` }}></div>
+            </NavLink>
+            <button onClick={() => addProductToCart(product)} className={styles.btnAdd}>
+              Add to cart
+            </button>
+            <PercentDiscount product={product} classNameDiscount={styles.discount} />
           </div>
 
           <div className={styles.description_container}>
             <p className={styles.title}>{product.title}</p>
-            <div className={styles.price_container}>
-              {product.discont_price ?
-                <>
-                  <p className={styles.price}>{product.discont_price + '$'}</p>
-                  <p className={styles.discont_price}>{product.price + '$'}</p>
-                </>
-                :
-                <p className={styles.price}>{product.price + '$'}</p>
-              }
-
-            </div>
+            <CheckingDiscountPrice
+              product={product}
+              classNameContainer={styles.price_container}
+              classNamePrice={styles.price}
+              classNameDiscountPrice={styles.discount_price}
+            />
           </div>
-
         </div>
-      )) : ''}
+      ))}
     </div>
-  )
+  );
 }
 
-export default ProductCard
+export default ProductCard;

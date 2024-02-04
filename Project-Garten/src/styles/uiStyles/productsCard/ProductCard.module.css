@@ -1,11 +1,12 @@
 .product_container {
   display: flex;
   height: 440px;
+  text-decoration: none;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
   border-radius: var(--radius-big, 12px);
-  border: 1px solid var(--grey-divider, #DDD);
+  border: 1px solid var(--grey-divider, #ddd);
 }
 
 .img_container {
@@ -16,7 +17,9 @@
   border-radius: var(--radius-big, 12px) var(--radius-big, 12px) 0 0;
   width: 316px;
   height: 284px;
-  border-bottom: 1px solid var(--grey-divider, #DDD);
+  border-bottom: 1px solid var(--grey-divider, #ddd);
+  background-size: cover;
+  background-position: center;
 }
 
 .btnAdd {
@@ -28,11 +31,14 @@
   border: none;
   border-radius: var(--radius-small, 6px);
   background: var(--green, #393);
-  color: var(--txt-white, #FFF);
+  color: var(--txt-white, #fff);
   font-size: 20px;
   font-weight: 600;
   line-height: 130%;
   cursor: pointer;
+  transition: all 0.3s ease-out;
+  transform: scale(1);
+  /* box-shadow: 0px 7px 6px 0px var(--green, #393); */
   opacity: 0;
 }
 
@@ -42,9 +48,19 @@
 
 .btnAdd:hover {
   background: var(--black, #282828);
+  /* box-shadow: 0px 10px 10px 0px rgb(0 0 0); */
+  transform: scale(1.04);
 }
 
-.discont {
+.btnAdd:active {
+  background: var(--txt-white, #282828);
+  /* box-shadow: 0px 4px 4px 0px var(--txt-white, #fff); */
+  transform: scale(1);
+  transition: all 0.1s ease-out;
+  color: #282828;
+}
+
+.discount {
   position: absolute;
   right: 16px;
   top: 16px;
@@ -52,7 +68,7 @@
   border-radius: var(--radius-small, 6px);
   background: var(--green, #393);
   text-align: center;
-  color: var(--txt-white, #FFF);
+  color: var(--txt-white, #fff);
   font-size: 20px;
   font-weight: 600;
   line-height: 130%;
@@ -100,8 +116,8 @@
   line-height: 110%;
 }
 
-.discont_price {
-  color: var(--txt-grey, #8B8B8B);
+.discount_price {
+  color: var(--txt-grey, #8b8b8b);
   font-size: 20px;
   font-weight: 500;
   line-height: 130%;
