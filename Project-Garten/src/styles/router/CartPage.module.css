@@ -14,12 +14,6 @@
   column-gap: 32px;
 }
 
-.products_container {
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-}
-
 .form_container {
   width: 548px;
   padding: 32px;
@@ -28,16 +22,16 @@
   align-items: center;
   gap: 32px;
   border-radius: var(--radius-big, 12px);
-  background: var(--light-grey, #F1F3F4);
+  background: var(--light-grey, #f1f3f4);
 }
 
 .input {
-  color: var(--txt-grey, #8B8B8B);
-  border: 1px solid var(--grey-divider, #DDD);
+  color: var(--txt-grey, #8b8b8b);
+  border: 1px solid var(--grey-divider, #ddd);
 }
 
 .btn {
   justify-content: center;
   background: var(--green, #393);
-  color: var(--txt-white, #FFF);
+  color: var(--txt-white, #fff);
 }

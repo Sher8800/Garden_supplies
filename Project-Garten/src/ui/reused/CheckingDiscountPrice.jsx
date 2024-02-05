@@ -1,15 +1,15 @@
 import React from "react";
 
-function CheckingDiscountPrice({ product, classNameContainer, classNamePrice, classNameDiscountPrice }) {
+function CheckingDiscountPrice({ product, classNameContainer, classNamePrice, classNameDiscountPrice, prise, discountPrice }) {
   return (
     <div className={classNameContainer}>
       {product.discont_price ? (
         <>
-          <p className={classNamePrice}>{"$" + product.discont_price}</p>
-          <p className={classNameDiscountPrice}>{"$" + product.price}</p>
+          <p className={classNamePrice}>{"$" + ((discountPrice && Math.round(discountPrice * 100) / 100) || product.discont_price)}</p>
+          <p className={classNameDiscountPrice}>{"$" + ((prise && Math.round(prise * 100) / 100) || product.price)}</p>
         </>
       ) : (
-        <p className={classNamePrice}>{"$" + product.price}</p>
+        <p className={classNamePrice}>{"$" + ((prise && Math.round(prise * 100) / 100) || product.price)}</p>
       )}
     </div>
   );

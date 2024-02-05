@@ -4,18 +4,14 @@ import { BASE_URL } from "../../redux/api/baseUrl";
 import { NavLink } from "react-router-dom";
 import CheckingDiscountPrice from "../reused/CheckingDiscountPrice";
 import PercentDiscount from "../reused/PercentDiscount";
-import { useDispatch, useSelector } from "react-redux";
-import { addProduct, cartSelector, incrementProduct } from "../../redux/slices/CartSlice";
+import { useDispatch } from "react-redux";
+import { addOrIncrementProduct } from "../../redux/slices/CartSlice";
 
 function ProductCard({ products, classNameContainer }) {
   const dispatch = useDispatch();
 
-  const { cart: cartProducts } = useSelector(cartSelector);
-  console.log(cartProducts);
-
   const addProductToCart = (product) => {
-    dispatch(addProduct(product));
-    // dispatch(incrementProduct(product));
+    dispatch(addOrIncrementProduct(product));
   };
 
   return (

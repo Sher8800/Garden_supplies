@@ -2,33 +2,33 @@ import React from "react";
 import styles from "../../styles/uiStyles/reused/CounterButtons.module.css";
 import plus from "../../images/plus.png";
 import minus from "../../images/minus.png";
-import CheckingDiscountPrice from "./CheckingDiscountPrice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addOrIncrementProduct, cartSelector, decrementProduct } from "../../redux/slices/CartSlice";
 
-function CounterButtons({ decrement, increment, count }) {
+function CounterButtons({ product }) {
   const dispatch = useDispatch();
 
-  return (
-    <div className={styles.btns_prices}>
-      <div className={styles.count_btns}>
-        <button onClick={decrement} className={styles.decrement}>
-          <img className={styles.img_count_btns} src={minus} alt="minus" />
-        </button>
-        <div className={styles.count}>{count}</div>
-        <button onClick={increment} className={styles.increment}>
-          <img className={styles.img_count_btns} src={plus} alt="plus" />
-        </button>
-      </div>
-      {/* <CheckingDiscountPrice product={}
-        classNameContainer={styles.prices}
-        classNamePrice={styles.price}
-        classNameDiscountPrice={styles.discount_prices}
-      /> */}
+  const { cart: cartProducts } = useSelector(cartSelector);
+  let current = cartProducts.filter((el) => el.id == product.id);
+  let [currentProduct] = current;
 
-      {/* <div className={styles.prices}>
-        <p className={styles.price}>$155</p>
-        <p className={styles.discont_prices}>$240</p>
-      </div> */}
+  const increment = (param) => {
+    dispatch(addOrIncrementProduct(param));
+  };
+
+  const decrement = (param) => {
+    dispatch(decrementProduct(param));
+  };
+
+  return (
+    <div className={styles.count_btns}>
+      <button onClick={() => decrement(product)} className={styles.decrement}>
+        <img className={styles.img_count_btns} src={minus} alt="minus" />
+      </button>
+      <div className={styles.count}>{currentProduct ? currentProduct.count : 0}</div>
+      <button onClick={() => increment(product)} className={styles.increment}>
+        <img className={styles.img_count_btns} src={plus} alt="plus" />
+      </button>
     </div>
   );
 }

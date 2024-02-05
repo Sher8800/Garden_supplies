@@ -6,12 +6,15 @@ import CheckingDiscountPrice from "../../ui/reused/CheckingDiscountPrice";
 import PercentDiscount from "../../ui/reused/PercentDiscount";
 import { useGetProductQuery } from "../../redux/api/productApi";
 import { BASE_URL } from "../../redux/api/baseUrl";
+import { useDispatch } from "react-redux";
+import { addOrIncrementProduct } from "../../redux/slices/CartSlice";
 
 let product = [];
 
 function ProductPage() {
   const location = useLocation();
   const { state } = location;
+  const dispatch = useDispatch();
 
   const { data, isLoading } = useGetProductQuery(state.id);
   if (data && !isLoading) {
@@ -19,6 +22,10 @@ function ProductPage() {
   } else {
     return <div>Loading...</div>;
   }
+
+  const addProductToCart = (productAdd) => {
+    dispatch(addOrIncrementProduct(productAdd));
+  };
 
   return (
     <>
@@ -40,8 +47,10 @@ function ProductPage() {
             </div>
 
             <div className={styles.btn_container}>
-              <CounterButtons decrement={""} increment={""} count={1} />
-              <button className={styles.add_btn}>Add to cart</button>
+              <CounterButtons product={product} />
+              <button onClick={() => addProductToCart(product)} className={styles.add_btn}>
+                Add to cart
+              </button>
             </div>
 
             <div className={styles.description_container}>
