@@ -10,8 +10,15 @@ import AllSales from "./pages/router/AllSales";
 import NotFoundPage from "./pages/router/NotFoundPage";
 import { Routes, Route } from "react-router-dom";
 import HomeSale from "./components/homeComponents/HomeSale";
+import { useDispatch } from "react-redux";
+import { useGetAllProductsQuery } from "./redux/api/productApi";
+import { setProducts } from "./redux/slices/ProductSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  const { data } = useGetAllProductsQuery();
+  dispatch(setProducts(data));
+
   return (
     <div className="App">
       <Routes>

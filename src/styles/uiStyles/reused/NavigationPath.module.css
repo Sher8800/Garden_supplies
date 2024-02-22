@@ -31,3 +31,9 @@
   width: 16px;
   border-bottom: 1px solid #ddd;
 }
+
+@media screen and (max-width: 768px) {
+  .path_container {
+    display: none;
+  }
+}

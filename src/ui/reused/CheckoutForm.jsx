@@ -1,11 +1,17 @@
 import React from "react";
 import styles from "../../styles/uiStyles/reused/CheckoutForm.module.css";
 import { useForm } from "react-hook-form";
-import { useSendOrderMutation } from "../../redux/api/productApi";
 
-function CheckoutForm({ setSendingOrder, cartProducts, classInput, classBtn, txtBtn }) {
-  const [sendProduct] = useSendOrderMutation();
-
+function CheckoutForm({
+  setSendingOrder,
+  setSendingDiscount,
+  sendProduct,
+  sendDiscount,
+  cartProducts,
+  classInput,
+  classBtn,
+  txtBtn,
+}) {
   const {
     register,
     handleSubmit,
@@ -14,10 +20,10 @@ function CheckoutForm({ setSendingOrder, cartProducts, classInput, classBtn, txt
   } = useForm({ mode: "onBlur" });
 
   const onSubmit = (data) => {
-    sendProduct({ ...data, order: cartProducts });
-    // emptyTrashArray();
-    // toast.success("Application accepted!");
-    setSendingOrder(true);
+    sendDiscount && sendDiscount({ ...data });
+    sendProduct && sendProduct({ ...data, order: cartProducts });
+    setSendingOrder && setSendingOrder(true);
+    setSendingDiscount && setSendingDiscount(true);
     reset();
   };
 

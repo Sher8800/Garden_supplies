@@ -27,15 +27,8 @@
   text-decoration: none;
 }
 
-.link:hover {
-  transform: scale(1.12);
-}
-
 .active {
-  transform: scale(1.12);
-  /* border-bottom: 2px solid var(--green, #393); */
   color: var(--green, #393);
-  /* box-shadow: -6px 0 white, 6px 0 white, 0 7px 10px -5px var(--green, #393); */
 }
 
 .icon_logo {
@@ -43,7 +36,7 @@
   height: 70px;
 }
 
-.customLink {
+.cartBurger_container {
   position: relative;
 }
 
@@ -65,4 +58,53 @@
 .icon_cart {
   width: 48px;
   height: 48px;
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    height: 110px;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 68px;
+  }
+
+  .links_container {
+    display: none;
+  }
+
+  .cartBurger_container {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  .link {
+    font-size: 24px;
+  }
+
+  .icon_logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .icon_cart {
+    width: 32px;
+    height: 32px;
+  }
+
+  .count {
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .link {
+    font-size: 18px;
+  }
 }
