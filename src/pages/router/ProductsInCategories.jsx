@@ -10,6 +10,8 @@ import FilterBySorted from "../../ui/filterSearch/FilterBySorted";
 import { useFilterByDiscount } from "../../customFiles/hooks/useFilterByDiscount";
 import { useFilterByPrice } from "../../customFiles/hooks/useFilterByPrice";
 import { useFilterBySorted } from "../../customFiles/hooks/useFilterBySorted";
+import BackToTopButton from "../../ui/reused/BackToTopButton";
+
 const paths = ["Main page", "Categories", "Tools and equipment"];
 
 function ProductsInCategories() {
@@ -42,6 +44,7 @@ function ProductsInCategories() {
         <FilterBySorted sortProducts={onSort} sortMode={sortMode} />
       </div>
       <ProductCard products={sortedList} classNameContainer={styles.products_container} />
+      <BackToTopButton />
     </div>
   );
 }

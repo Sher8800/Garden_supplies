@@ -6,6 +6,7 @@ import { addOrIncrementProduct } from "../../redux/slices/CartSlice";
 import useWindowSize from "../../customFiles/hooks/useWindowSize";
 import ProductPage1440 from "../../components/productComponents/ProductPage1440";
 import ProductPage768 from "../../components/productComponents/ProductPage768";
+import BackToTopButton from "../../ui/reused/BackToTopButton";
 
 let product = [];
 const paths = ["Main page", "Categories", "Tools and equipment", "Secateurs"];
@@ -34,6 +35,7 @@ function ProductPage() {
       ) : (
         <ProductPage768 product={product} addProductToCart={addProductToCart} paths={paths} />
       )}
+      <BackToTopButton />
     </>
   );
 }

@@ -12,6 +12,7 @@ import { useState } from "react";
 import ModalWindow from "../../components/cartComponents/ModalWindow";
 import { useSendOrderMutation } from "../../redux/api/productApi";
 import useWindowSize from "../../customFiles/hooks/useWindowSize";
+import BackToTopButton from "../../ui/reused/BackToTopButton";
 
 function CartPage() {
   const [sendProduct] = useSendOrderMutation();
@@ -50,6 +51,7 @@ function CartPage() {
           <ModalWindow sendingOrder={sendingOrder} setSendingOrder={setSendingOrder} />
         </div>
       )}
+      <BackToTopButton />
     </div>
   );
 }

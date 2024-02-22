@@ -8,6 +8,7 @@ import { useFilterByPrice } from "../../customFiles/hooks/useFilterByPrice";
 import { useFilterBySorted } from "../../customFiles/hooks/useFilterBySorted";
 import { useSelector } from "react-redux";
 import { productsSelector } from "../../redux/slices/ProductSlice";
+import BackToTopButton from "../../ui/reused/BackToTopButton";
 
 let products = [];
 const paths = ["Main page", "All sales"];
@@ -33,6 +34,7 @@ function AllSales() {
         <FilterBySorted sortProducts={onSort} sortMode={sortMode} />
       </div>
       <ProductCard products={sortedList} classNameContainer={styles.products_container} />
+      <BackToTopButton />
     </div>
   );
 }

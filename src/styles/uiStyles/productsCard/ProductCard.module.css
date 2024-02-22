@@ -160,6 +160,10 @@
     width: 45vw;
   }
 
+  .btnAdd {
+    display: none;
+  }
+
   .img_products {
     width: 44.7vw;
     height: 250px;
