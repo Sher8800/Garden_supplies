@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d6a48e2d.css",
+    "main.js": "/static/js/main.4c85063d.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/static/js/787.9e9f4ffd.chunk.js",
+    "static/media/PromoBanner.png": "/static/media/PromoBanner.4fb0b42dd1f02626bb1f.png",
+    "static/media/gartenProduct.png": "/static/media/gartenProduct.f0800a2f03ab476df68e.png",
+    "static/media/cactus.png": "/static/media/cactus.6ab717a0d31507d3b83b.png",
+    "static/media/cross.svg": "/static/media/cross.aa0a401a7eb7a267e7402d47ffc58f7f.svg",
+    "index.html": "/index.html",
+    "static/media/vector.svg": "/static/media/vector.7046400652293c934f3b.svg",
+    "main.d6a48e2d.css.map": "/static/css/main.d6a48e2d.css.map",
+    "main.4c85063d.js.map": "/static/js/main.4c85063d.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6a48e2d.css",
+    "static/js/main.4c85063d.js"
+  ]
+}
