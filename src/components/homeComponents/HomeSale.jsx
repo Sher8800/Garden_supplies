@@ -9,7 +9,10 @@ let products = [];
 
 function HomeSale() {
   const { products: allProducts } = useSelector(productsSelector);
-  products = useMemo(() => allProducts.filter((product) => product.discont_price).slice(0, 4), []);
+  products = useMemo(
+    () => allProducts && allProducts.filter((product) => product.discont_price).slice(0, 4),
+    []
+  );
 
   return (
     <div className={styles.homeSale_container}>

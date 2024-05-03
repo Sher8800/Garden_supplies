@@ -9,7 +9,9 @@ export const useFilterByDiscount = (list, filterProp, initFilter = false) => {
   };
 
   useLayoutEffect(() => {
-    filterValue ? setFilteredList(filteredList.filter((product) => product[filterProp])) : setFilteredList(list);
+    filterValue
+      ? setFilteredList(filteredList && filteredList.filter((product) => product[filterProp]))
+      : setFilteredList(list);
   }, [list, filterValue]);
 
   return { onFilter, filteredList, filterValue };

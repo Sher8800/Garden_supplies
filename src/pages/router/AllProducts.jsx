@@ -17,18 +17,6 @@ const paths = ["Main page", "All products"];
 function AllProducts() {
   const { products: allProducts } = useSelector(productsSelector);
 
-  // const calc = {
-  //   sum: (a, b) => console.log(a + b),
-  //   minus: (a, b) => console.log(a - b),
-  //   multi: (a, b) => console.log(a * b),
-  //   dev: (a, b) => console.log(a / b),
-  // };
-
-  // const calcNew = (x, a, b) => {
-  //   calc[x](a, b);
-  // };
-  // calcNew("sum", 15, 3); // 5
-
   const {
     filterValue,
     filteredList: filteredListByDiscount,
